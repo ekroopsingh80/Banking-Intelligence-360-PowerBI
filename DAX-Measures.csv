@@ -1,0 +1,89 @@
+Name,TableID,Expression,FormatString,IsHidden
+"Total Customers",3117,"
+DISTINCTCOUNT(Customers[CustomerID])","0",False
+"Total Accounts",3117,"
+DISTINCTCOUNT(Accounts[AccountID])","0",False
+"Total Deposits",3117,"
+SUM(Accounts[CurrentBalanceCAD])","\$#,0.00;(\$#,0.00);\$#,0.00",False
+"Total Original Loan Amount",3117,"
+SUM(Loans[OriginalAmountCAD])","\$#,0.00;(\$#,0.00);\$#,0.00",False
+"Total Outstanding Loans",3117,"
+SUM(Loans[OutstandingBalanceCAD])","\$#,0.00;(\$#,0.00);\$#,0.00",False
+"Loan Default Rate",3117,"
+DIVIDE(
+    CALCULATE(
+        DISTINCTCOUNT(Loans[LoanID]),
+        Loans[DefaultFlag] = 1
+    ),
+    DISTINCTCOUNT(Loans[LoanID]),
+    0
+)","0.00%;-0.00%;0.00%",False
+"Loan Count",3117,"
+DISTINCTCOUNT(Loans[LoanID])","0",False
+"Average Loan Amount",3117,"
+DIVIDE(
+    [Total Original Loan Amount],
+    [Loan Count],
+    0
+)","",False
+"Previous Month Loan Originations",3117,"
+CALCULATE(
+    [Total Original Loan Amount],
+    DATEADD(DateTable[Date], -1, MONTH)
+)","",False
+"MoM Loan Growth %",3117,"
+VAR Previous_Month =
+    [Previous Month Loan Originations]
+RETURN
+    DIVIDE(
+        [Total Original Loan Amount] - Previous_Month,
+        Previous_Month
+    )","0.00%;-0.00%;0.00%",False
+"Previous Year Loan Originations",3117,"
+CALCULATE(
+    [Total Original Loan Amount],
+    SAMEPERIODLASTYEAR(DateTable[Date])
+)","",False
+"YoY Loan Growth %",3117,"
+VAR Previous_Year =
+    [Previous Year Loan Originations]
+RETURN
+    DIVIDE(
+        [Total Original Loan Amount] - Previous_Year,
+        Previous_Year
+    )","0.00%;-0.00%;0.00%",False
+"Loan to Deposit Ratio",3117,"
+DIVIDE(
+    [Total Outstanding Loans],
+    [Total Deposits]
+)","",False
+"Average Annual Income",3117,"
+AVERAGE(Customers[AnnualIncomeCAD])","\$#,0.00;(\$#,0.00);\$#,0.00",False
+"Average Customer Age",3117,"
+AVERAGE(Customers[Age])","0.0",False
+"Total Loans",3117,"
+DISTINCTCOUNT(Loans[LoanID])","0",False
+"Average Credit Score",3117,"
+AVERAGE(Customers[CreditScore])","0",False
+"Loans by Risk Band",3117,"
+DISTINCTCOUNT(CreditRisk[LoanID])","0",False
+"Total Transactions",3117,"
+DISTINCTCOUNT(Transactions[TransactionID])","0",False
+"Total Transaction Value",3117,"
+SUM(Transactions[AmountCAD])","\$#,0.0;(\$#,0.0);\$#,0.0",False
+"Average Transaction Value",3117,"
+DIVIDE(
+    [Total Transaction Value],
+    [Total Transactions],
+    0
+)","\$#,0.0;(\$#,0.0);\$#,0.0",False
+"Net Cash Flow",3117,"
+SUMX(
+    Transactions,
+    SWITCH(
+        Transactions[FlowDirection],
+        ""Inflow"", ABS(Transactions[AmountCAD]),
+        ""Outflow"", -ABS(Transactions[AmountCAD]),
+        0
+    )
+)","\$#,0.0;(\$#,0.0);\$#,0.0",False
