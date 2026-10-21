@@ -13,6 +13,34 @@ An interactive, six-page Power BI report exploring a **synthetic Canadian retail
 5. **Executive Insights & Recommendations** — key observations and business recommendations.
 6. **Loan Portfolio Deep Dive** — a hidden drillthrough destination for loan-type-specific KPIs, risk, and geographic exposure.
 
+## Dashboard gallery
+
+Preview all six report pages below. Click an image to open the full-size screenshot.
+
+### 1. Executive Banking Overview
+
+[![Executive Banking Overview](screenshots/01-Executive%20Banking%20Overview.png)](screenshots/01-Executive%20Banking%20Overview.png)
+
+### 2. Customer Intelligence
+
+[![Customer Intelligence](screenshots/02-Customer%20Intelligence.png)](screenshots/02-Customer%20Intelligence.png)
+
+### 3. Loan & Credit Risk Analytics
+
+[![Loan & Credit Risk Analytics](screenshots/03-Loan%20and%20Credit%20Risk%20Analysis.png)](screenshots/03-Loan%20and%20Credit%20Risk%20Analysis.png)
+
+### 4. Banking Transactions & Financial Performance
+
+[![Banking Transactions & Financial Performance](screenshots/04-Banking%20Transactions%20and%20Financial%20Performance.png)](screenshots/04-Banking%20Transactions%20and%20Financial%20Performance.png)
+
+### 5. Executive Insights & Recommendations
+
+[![Executive Insights & Recommendations](screenshots/05-Executive%20Insights%20and%20Recommendations.png)](screenshots/05-Executive%20Insights%20and%20Recommendations.png)
+
+### 6. Loan Portfolio Deep Dive (Drillthrough)
+
+[![Loan Portfolio Deep Dive (Drillthrough)](screenshots/06-Loan%20Portfolio%20Deep%20Dive-Hidden.png)](screenshots/06-Loan%20Portfolio%20Deep%20Dive-Hidden.png)
+
 ## Features and skills
 
 - Power BI data modeling with related customer, account, loan, branch, credit risk, transaction, and date tables
@@ -25,7 +53,7 @@ An interactive, six-page Power BI report exploring a **synthetic Canadian retail
 
 - `Banking-Intelligence-360.pbix` — Power BI Desktop report
 - `DAX-Measures.csv` — exported DAX measure definitions
-- `screenshots/` — add screenshots of the main report pages
+- `screenshots/` — screenshots of all six report pages
 
 ## How to explore
 
